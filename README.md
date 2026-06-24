@@ -19,7 +19,7 @@ A análise exploratória de dados (EDA) apresenta os resultados das views sobre 
 
 1. Clientes costumam comprar múltiplos itens por pedido?  
 
-<img width="712" height="466" alt="Image1" src="https://github.com/user-attachments/assets/241fa203-efa6-44aa-add1-bc879a89fd1b" />  
+  <img width="712" height="466" alt="Image1" src="https://github.com/user-attachments/assets/241fa203-efa6-44aa-add1-bc879a89fd1b" />  
   
 
 <img width="671" height="275" alt="Image2" src="https://github.com/user-attachments/assets/eab26b8c-c0f6-4d94-bed8-0c505d10e126" />  
