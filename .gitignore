@@ -1,4 +1,4 @@
 .env
 node_modules/
-npx supabase/.temp/
-npx supabase/.branches/
+supabase/.temp/
+supabase/.branches/
