@@ -15,15 +15,40 @@ Perguntas:
 
 3. Existe um padrão de carrinho por cliente?
 
-1. Clientes costumam comprar múltiplos itens por pedido?  
+1. Clientes costumam comprar múltiplos itens por pedido?
 
-<img width="712" height="466" alt="Image1" src="https://github.com/user-attachments/assets/241fa203-efa6-44aa-add1-bc879a89fd1b" />  
+
+# 1. Clientes costumam comprar múltiplos itens por pedido?  
   
-
-<img width="671" height="275" alt="Image2" src="https://github.com/user-attachments/assets/eab26b8c-c0f6-4d94-bed8-0c505d10e126" />    
-
+Para responder a essa pergunta com precisão matemática, os dados transacionais foram unificados através da view vw_multiple_items_per_order.  
   
-<img width="650" height="278" alt="Image3" src="https://github.com/user-attachments/assets/7472e2f5-c7b5-485a-b39b-7d4d216ae107" />  
+## Como as tabelas Silver se relacionam para responder a pergunta?  
+A construção de inteligência de vendas exige a conexão de múltiplas dimensões do negócio. Esta view utiliza Common Table Expressions (WITH) para pré-agregar valores financeiros antes do JOIN principal, evitando a duplicação de receitas caso um pedido possua vários itens e várias parcelas.  
+  
+<div class="table-item">
+    <span class="table-name">orders_dataset_silver</span>
+    <span class="role">(Tabela Central):</span> É o coração do modelo. Registra o evento de compra (order_id) e a data temporal, servindo de âncora para todas as outras tabelas.
+</div>
+
+<div class="table-item">
+    <span class="table-name">order_customers</span>
+    <span class="role">(Dimensão Cliente):</span> Conecta-se à tabela central via <code>customer_id</code>. Traz a identificação única (<code>customer_unique_id</code>) para rastrear o comportamento do indivíduo.
+</div>
+
+<div class="table-item">
+    <span class="table-name">order_items</span>
+    <span class="role">(Dimensão Física):</span> Conecta-se à tabela central via <code>order_id</code>. Detalha a granularidade do carrinho, contando exatamente quantas peças físicas existem no pacote.
+</div>
+
+<div class="table-item">
+    <span class="table-name">products_silver_tratada</span>
+    <span class="role">(Dimensão Produto):</span> Conecta-se à tabela de itens via <code>product_id</code>. Garante a integridade de que o item faturado é um produto real e ativo no catálogo do e-commerce.
+</div>
+
+<div class="table-item">
+    <span class="table-name">order_payments_silver_tratada</span>
+    <span class="role">(Dimensão Financeira):</span> Conecta-se à tabela central via <code>order_id</code>. Mensura o impacto econômico total (<code>valor_total_gasto</code>), assegurando que a análise se baseie em receita real e não apenas em intenção de compra.
+</div>
   
 ## Consulta de Negócios e Filtro Logístico  
 A extração dos indicadores finais utiliza a consulta abaixo:  
