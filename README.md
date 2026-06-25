@@ -15,7 +15,6 @@ Perguntas:
 
 3. Existe um padrão de carrinho por cliente?
 
-1. Clientes costumam comprar múltiplos itens por pedido?
 
 
 # 1. Clientes costumam comprar múltiplos itens por pedido?  
@@ -132,8 +131,59 @@ Consulta 2: Matriz de Coortes (Fatiamento Detalhado da Receita) Ao separarmos to
       <td>R$ 63,82</td>
     </tr>
   </tbody>
-</table>
+</table>  
 
+
+# 3. Existe um padrão de carrinho por cliente?  
+
+Para responder a questão foi criada a view vw_padrao_dos_carrinhos. O propósito é diagnosticar cientificamente o comportamento de checkout dos consumidores, seu impacto direto na rentabilidade da operação e mapear a volumetria de produtos por transação válida.  
+
+## Como as tabelas Silver se relacionam para responder a pergunta?  
+  
+Os 5 pilares da view vw_padrao_dos_carrinhos dentro do schema silver:
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>#</th>
+      <th>Tabela (Schema)</th>
+      <th>Entidade</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><code>silver.order_customers</code></td>
+      <td>Cliente</td>
+      <td>Fornece a chave mestra de identidade do comprador (<code>customer_unique_id</code>).</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code>silver.order_payments_silver_tratada</code></td>
+      <td>Pagamento</td>
+      <td>Fornece o valor financeiro transacionado por cartão, boleto ou voucher (<code>payment_value</code>).</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code>silver.products_silver_tratada</code></td>
+      <td>Produto</td>
+      <td>Fornece a inteligência de catálogo, mapeando o nome das divisões de mercado (<code>product_category_name</code>).</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code>silver.orders_dataset_silver</code></td>
+      <td>Order_dataset</td>
+      <td>A tabela central que gerencia os cabeçalhos dos pedidos, o status da venda e conecta o cliente ao carrinho (<code>customer_id</code>, <code>order_id</code>).</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code>silver.order_items</code></td>
+      <td>Items</td>
+      <td>A tabela de ligação volumétrica que dita quantos produtos foram adquiridos.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
