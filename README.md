@@ -53,6 +53,7 @@ Consulta 1: Resumo da Regra de Pareto (O Corte de 80%) A primeira consulta apuro
 
 Consulta 2: Matriz de Coortes (Fatiamento Detalhado da Receita) Ao separarmos toda a base em 4 grupos estruturados de influência financeira, geramos a seguinte matriz:
 
+
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; font-family: Arial, sans-serif;">
   <thead>
     <tr style="background-color: #f2f2f2;">
@@ -79,7 +80,26 @@ Consulta 2: Matriz de Coortes (Fatiamento Detalhado da Receita) Ao separarmos to
       <td>14,85%</td>
       <td>R$ 4.612.008,30</td>
       <td>30,00%</td>
-      
+      <td>R$ 323,29</td>
+    </tr>
+    <tr>
+      <td>3. Relevância Média (51 a 80%)</td>
+      <td>30.041</td>
+      <td>31,26%</td>
+      <td>R$ 4.611.935,65</td>
+      <td>30,00%</td>
+      <td>R$ 153,52</td>
+    </tr>
+    <tr>
+      <td>4. Cauda Longa (81 a 100%)</td>
+      <td>48.166</td>
+      <td>50,12%</td>
+      <td>R$ 3.074.000,06</td>
+      <td>20,00%</td>
+      <td>R$ 63,82</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
