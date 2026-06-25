@@ -189,7 +189,7 @@ Os 5 pilares da view vw_padrao_dos_carrinhos dentro do schema silver:
   
 <img width="1600" height="465" alt="image" src="https://github.com/user-attachments/assets/45a20df5-1a1b-4b45-bb59-a249f9e7aef9" />  
 
-A resposta científica e direta para a pergunta "Existe um padrão de carrinho por cliente?" é sim, existe um padrão de carrinho dos clientes.
+A resposta científica e direta para a pergunta "Existe um padrão de carrinho por cliente?" é: Sim, existe um padrão de carrinho por cliente.
 O padrão absoluto do negócio é a compra de um único produto.
 
 
