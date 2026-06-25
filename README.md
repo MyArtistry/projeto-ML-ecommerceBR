@@ -40,7 +40,46 @@ Ao injetar a regra AND valor_total_gasto > 0, garante-se que o pagamento já foi
 
 # 2. Existe concentração de receita em poucos clientes?  
 
+Para responder a questão foi criada a view vw_analise_de_concentracao_receita. As consultas permitem identificar a existência de concentração de receita (Princípio de Pareto clássico), avaliar a volumetria, a penetração e os tickets médios de diferentes coortes de clientes e mapear a distribuição do faturamento do e-commerce por cliente único para fornecer insumos estratégicos para alavancagem de vendas, maximização de lucro logístico e fidelização da base.  
 
+## Como as tabelas Silver se relacionam para responder a pergunta?  
+
+Para viabilizar esta análise sem falhas de performance ou distorções, os dados transacionais brutos foram unificados na camada Silver através da view silver.vw_analise_de_concentracao_receita. Esta estrutura conecta três tabelas fundamentais: o cadastro de clientes (order_customers), o registro central de pedidos (orders_dataset_silver) e a tabela de fluxos financeiros (order_payments_silver_tratada).  
+
+## Resultados Estatísticos das Consultas de Negócio  
+  
+A extração de indicadores foi realizada em duas etapas complementares, cujos dados possuem uma amarração matemática perfeita entre si:
+Consulta 1: Resumo da Regra de Pareto (O Corte de 80%) A primeira consulta apurou que o volume necessário de clientes para compor os 80% do faturamento da empresa corresponde a 47.929 clientes de um universo de 96.095, representando exatos 49,88% de penetração da base.  
+
+Consulta 2: Matriz de Coortes (Fatiamento Detalhado da Receita) Ao separarmos toda a base em 4 grupos estruturados de influência financeira, geramos a seguinte matriz:
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Grupos de Clientes</th>
+      <th>Total Clientes</th>
+      <th>Penetração Base</th>
+      <th>Faturamento do Grupo</th>
+      <th>Part. Receita</th>
+      <th>Ticket Médio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. Top VIP (0 a 20%)</td>
+      <td>3.622</td>
+      <td>3,77%</td>
+      <td>R$ 3.074.763,10</td>
+      <td>20,00%</td>
+      <td>R$ 848,91</td>
+    </tr>
+    <tr>
+      <td>2. Alta Relevância (21 a 50%)</td>
+      <td>14.266</td>
+      <td>14,85%</td>
+      <td>R$ 4.612.008,30</td>
+      <td>30,00%</td>
+      
 
 
 
