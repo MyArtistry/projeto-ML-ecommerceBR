@@ -27,28 +27,28 @@ A construção de inteligência de vendas exige a conexão de múltiplas dimens�
   
 <div class="table-item">
     <span class="table-name">orders_dataset_silver</span>
-    <span class="role">(Tabela Central):</span> É o coração do modelo. Registra o evento de compra (order_id) e a data temporal, servindo de âncora para todas as outras tabelas.
-</div>
+    <span class="role">(Tabela Central):</span> É o coração do modelo. Registra o evento de compra (order_id) e a data temporal, servindo de âncora para todas as outras tabelas.  
+</div>  
 
 <div class="table-item">
     <span class="table-name">order_customers</span>
     <span class="role">(Dimensão Cliente):</span> Conecta-se à tabela central via <code>customer_id</code>. Traz a identificação única (<code>customer_unique_id</code>) para rastrear o comportamento do indivíduo.
-</div>
+</div>  
 
 <div class="table-item">
     <span class="table-name">order_items</span>
-    <span class="role">(Dimensão Física):</span> Conecta-se à tabela central via <code>order_id</code>. Detalha a granularidade do carrinho, contando exatamente quantas peças físicas existem no pacote.
-</div>
+    <span class="role">(Dimensão Física):</span> Conecta-se à tabela central via <code>order_id</code>. Detalha a granularidade do carrinho, contando exatamente quantas peças físicas existem no pacote.  
+</div>  
 
 <div class="table-item">
     <span class="table-name">products_silver_tratada</span>
-    <span class="role">(Dimensão Produto):</span> Conecta-se à tabela de itens via <code>product_id</code>. Garante a integridade de que o item faturado é um produto real e ativo no catálogo do e-commerce.
-</div>
+    <span class="role">(Dimensão Produto):</span> Conecta-se à tabela de itens via <code>product_id</code>. Garante a integridade de que o item faturado é um produto real e ativo no catálogo do e-commerce.  
+</div>  
 
 <div class="table-item">
     <span class="table-name">order_payments_silver_tratada</span>
-    <span class="role">(Dimensão Financeira):</span> Conecta-se à tabela central via <code>order_id</code>. Mensura o impacto econômico total (<code>valor_total_gasto</code>), assegurando que a análise se baseie em receita real e não apenas em intenção de compra.
-</div>
+    <span class="role">(Dimensão Financeira):</span> Conecta-se à tabela central via <code>order_id</code>. Mensura o impacto econômico total (<code>valor_total_gasto</code>), assegurando que a análise se baseie em receita real e não apenas em intenção de compra.  
+</div>  
   
 ## Consulta de Negócios e Filtro Logístico  
 A extração dos indicadores finais utiliza a consulta abaixo:  
