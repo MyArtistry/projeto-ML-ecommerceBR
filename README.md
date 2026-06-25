@@ -51,7 +51,7 @@ Para viabilizar esta análise sem falhas de performance ou distorções, os dado
 A extração de indicadores foi realizada em duas etapas complementares, cujos dados possuem uma amarração matemática perfeita entre si:
 Consulta 1: Resumo da Regra de Pareto (O Corte de 80%) A primeira consulta apurou que o volume necessário de clientes para compor os 80% do faturamento da empresa corresponde a 47.929 clientes de um universo de 96.095, representando exatos 49,88% de penetração da base.  
 
-Consulta 2: Matriz de Coortes (Fatiamento Detalhado da Receita) Ao separarmos toda a base em 4 grupos estruturados de influência financeira, geramos a seguinte matriz:
+Consulta 2: Matriz de Coortes (Fatiamento Detalhado da Receita) Ao separarmos toda a base em 4 grupos estruturados de influência financeira, geramos a seguinte matriz representada em HTML:
 
 
 <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; font-family: Arial, sans-serif;">
